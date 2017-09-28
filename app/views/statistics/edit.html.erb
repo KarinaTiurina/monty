@@ -1,0 +1,12 @@
+<h1>Ваш выбор:</h1>
+[<%= @game[0] %>]
+[<%= @game[1] %>]
+[<%= @game[2] %>]
+<br />
+<% @game.each_with_index do |value, i|%>
+  <% if @open_door == i %>
+    <%= image_tag('goat.jpg', :class => "item-img") %>
+  <% else %>
+    <%= link_to image_tag('door.jpg', :class => "item-img"), statistic_path(i) %>
+  <% end %>
+<% end %>

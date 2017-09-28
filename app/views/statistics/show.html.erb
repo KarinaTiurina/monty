@@ -1,0 +1,21 @@
+[<%= @game[0] %>]
+[<%= @game[1] %>]
+[<%= @game[2] %>]
+<br />
+
+<% if @status == :won %>
+  Вы выиграли!
+<% else %>
+  Вы проиграли!
+<% end %>
+<br />
+
+<% @game.each_with_index do |value, i|%>
+  <%= image_tag(value + '.jpg', :class => "item-img") %>
+<% end %>
+
+<br />
+
+<%= link_to 'Сыграть еще', root_path %>
+
+

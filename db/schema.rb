@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 20170928123218) do
 
   create_table "statistics", force: :cascade do |t|
-    t.integer "num_change"
-    t.integer "num_change_won"
-    t.integer "num_not_change"
-    t.integer "num_not_change_won"
+    t.integer "num_change", default: 0
+    t.integer "num_change_won", default: 0
+    t.integer "num_not_change", default: 0
+    t.integer "num_not_change_won", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
