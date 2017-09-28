@@ -26,7 +26,7 @@ class StatisticsController < ApplicationController
       end
     end
 
-    @statistic.save
+    @statistic.save!
   end
 
   def edit

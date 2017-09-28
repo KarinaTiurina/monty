@@ -1,13 +1,10 @@
-[<%= @game[0] %>]
-[<%= @game[1] %>]
-[<%= @game[2] %>]
-<br />
-
-<% if @status == :won %>
-  Вы выиграли!
-<% else %>
-  Вы проиграли!
-<% end %>
+<h3>
+  <% if @status == :won %>
+    Вы выиграли!
+  <% else %>
+    Вы проиграли!
+  <% end %>
+</h3>
 <br />
 
 <% @game.each_with_index do |value, i|%>
@@ -15,7 +12,22 @@
 <% end %>
 
 <br />
+<br />
+<h3>Вероятность выигрыша (статистика сыгранных партий)</h3>
+<table>
+  <tr>
+    <td>при смене двери</td>
+    <td>при выборе той же двери</td>
+  </tr>
+  <tr>
+    <td><%= calc_percent(@statistic.num_change, @statistic.num_change_won) %>%</td>
+    <td><%= calc_percent(@statistic.num_not_change, @statistic.num_not_change_won) %>%</td>
+  </tr>
+</table>
 
-<%= link_to 'Сыграть еще', root_path %>
+<br />
+<br />
+
+<%= link_to 'Сыграть еще', root_path, class: 'btn btn-primary' %>
 
 
