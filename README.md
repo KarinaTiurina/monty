@@ -1,24 +1,16 @@
-# README
+# Парадокс Монти Холла
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение реализует одну из известных задач теории вероятностей и составляет статистику сыгранных партий.
 
-Things you may want to cover:
+Представьте, что вы стали участником игры, в которой вам нужно выбрать одну из трёх дверей. За одной из дверей находится мешок с деньгами, за двумя другими дверями — козы. Вы выбираете одну из дверей, например, номер 1, после этого ведущий, который знает, где находятся деньги, а где — козы, открывает одну из оставшихся дверей, например, номер 3, за которой находится козел. После этого он спрашивает вас — не желаете ли вы изменить свой выбор и выбрать дверь номер 2? Увеличатся ли ваши шансы выиграть автомобиль, если вы примете предложение ведущего и измените свой выбор?
 
-* Ruby version
+Подробнее почитать можно [здесь](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B4%D0%BE%D0%BA%D1%81_%D0%9C%D0%BE%D0%BD%D1%82%D0%B8_%D0%A5%D0%BE%D0%BB%D0%BB%D0%B0)
 
-* System dependencies
+Приложение написано с помощью `rails 5.1.4`.
 
-* Configuration
+Для запуска:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    bundle exec rails db:migrate
+    bundle exec rails s
+    
+Проверить статистику парадокса можно [здесь](http://monti-hall-paradox.herokuapp.com/)
