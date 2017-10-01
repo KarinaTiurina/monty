@@ -37,6 +37,8 @@ class StatisticsController < ApplicationController
     session[:choice1] = @choice1
   end
 
+  private
+
   def set_game
     ['goat', 'goat', 'money']
   end
