@@ -1,5 +1,4 @@
 class StatisticsController < ApplicationController
-
   def new
     @game = set_game.shuffle!
     session[:game] = @game
@@ -10,21 +9,11 @@ class StatisticsController < ApplicationController
     choice2 = params[:id].to_i
     choice1 = session[:choice1]
 
-    @statistic = Statistic.where(id: 1).first_or_create!
+    @statistic = Statistic.first_statistic
 
     @status = game_status(@game, choice2)
 
-    if choice1 == choice2
-      @statistic.num_not_change += 1
-      if @status == :won
-        @statistic.num_not_change_won += 1
-      end
-    else
-      @statistic.num_change += 1
-      if @status == :won
-        @statistic.num_change_won += 1
-      end
-    end
+    @statistic.change_statistic(@status, choice1, choice2)
 
     @statistic.save!
   end
